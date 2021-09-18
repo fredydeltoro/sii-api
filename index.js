@@ -1,4 +1,5 @@
 const axios = require('axios');
+const cheerio = require('cheerio');
 
 const init = async () => {
   axios.get('http://187.216.132.62:81/sistema//index.php', {
@@ -19,7 +20,12 @@ const init = async () => {
     },
     withCredentials: true
   }).then((res) => {
-    console.log('mmmm a ver el avance ===>', res.data);
+    const $ = cheerio.load(res.data)
+    console.log('===================================');
+    $('body > table:nth-child(1) > tbody').children().each((i, el) => {
+      console.log($(el).text());
+    })
+    console.log('===================================');
   })
 }
 
