@@ -7,8 +7,6 @@ const init = async () => {
   const host = process.env.HOST
   const qs = `tipo=a&usuario=${user}&contrasena=${password}`
 
-  console.log('que pedoooo?', process.env.HOST);
-
   // axios.get(`${host}/sistema//index.php`, {
   //   withCredentials: true
   // }).then((res) => {
