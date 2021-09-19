@@ -9,6 +9,14 @@
     "postinstall": "husky install",
     "pre-commit": "lint-staged"
   },
+  "lint-staged": {
+    "src/**/*.{js}": [
+      "eslint"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
   "author": "Alfredo Monroy (Freddy)",
   "license": "ISC",
   "dependencies": {
