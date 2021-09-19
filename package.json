@@ -5,7 +5,14 @@
   "main": "src/main.js",
   "scripts": {
     "start": "pm2-runtime src/main.js --watch --raw",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
   "author": "Alfredo Monroy (Freddy)",
   "license": "ISC",
@@ -24,6 +31,10 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
     "eslint-watch": "^7.0.0",
-    "node-env-run": "^4.0.2"
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "node-env-run": "^4.0.2",
+    "prettier": "^2.4.1",
+    "stylelint": "^13.13.1"
   }
 }
