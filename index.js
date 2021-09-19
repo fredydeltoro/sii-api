@@ -2,19 +2,24 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 const init = async () => {
-  axios.get('http://187.216.132.62:81/sistema//index.php', {
+  const user = process.env.USER_ID
+  const password = process.env.USER_KEY
+  const host = process.env.HOST
+  const qs = `tipo=a&usuario=${user}&contrasena=${password}`
+
+  axios.get(`${host}/sistema//index.php`, {
     withCredentials: true
   }).then((res) => {
     console.log('mmmm que pasara? ===>', res.headers['set-cookie']);
   })
 
-  const login = await axios.post('http://187.216.132.62:81/sistema//acceso.php', 'tipo=a&usuario=12590161&contrasena=8623', {
+  const login = await axios.post(`${host}/sistema//acceso.php`, qs, {
     withCredentials: true
   })
 
   console.log('mmmm a ver ???? ====>', login.headers['set-cookie'][0]);
 
-  axios.get('http://187.216.132.62:81/sistema//modulos/cons/alumnos/avance_reticular.php', {
+  axios.get(`${host}/sistema//modulos/cons/alumnos/avance_reticular.php`, {
     headers: {
       Cookie: `${login.headers['set-cookie'][0]}`
     },
