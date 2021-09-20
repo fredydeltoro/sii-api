@@ -1,4 +1,4 @@
-const mapTable = ($, table) => {
+const mapTable = ($, table, type = 'text') => {
   const tbody = Array.from(table.children());
   const headers = tbody[0].children
     .filter((el) => el.type === 'tag')
@@ -7,7 +7,7 @@ const mapTable = ($, table) => {
     tr.children
       .filter((el) => el.type === 'tag')
       .map((el) => ({
-        data: $(el).text().trim(),
+        data: $(el)[type]().trim(),
         attribs: { ...el.attribs },
       })),
   );
