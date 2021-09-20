@@ -1,3 +1,5 @@
+const apiClient = require('../../drivers/apiClient.js');
+
 module.exports = (Router) => {
   const router = new Router();
 
@@ -15,7 +17,6 @@ module.exports = (Router) => {
 
     response.status = 200;
     response.body = info;
-
   });
 
   return router.routes();
