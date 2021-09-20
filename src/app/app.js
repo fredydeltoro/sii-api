@@ -6,10 +6,12 @@ const app = new Koa();
 
 app.use(cors());
 
-app.use(bodyParser({
-  enableTypes: ['json'],
-  jsonLimit: '4mb',
-  strict: true,
-}));
+app.use(
+  bodyParser({
+    enableTypes: ['json'],
+    jsonLimit: '4mb',
+    strict: true,
+  }),
+);
 
 module.exports = app;

@@ -15,8 +15,6 @@ module.exports = (Router) => {
     );
 
     apiClient.defaults.headers.common.Cookie = login.headers['set-cookie'][0];
-
-    console.log('a ver veamos ====>', apiClient.defaults.headers.common);
     response.status = 200;
   });
 
