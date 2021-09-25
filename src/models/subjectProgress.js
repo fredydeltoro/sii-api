@@ -13,11 +13,7 @@ const subjectProgress = (data) => {
   );
 
   const academic = simpleParse({ carrea: '', especialidad: '' }, data.academic);
-  // /([A-Z]{1,3}\-*\d{1,2})\s+\<br\>(.*)[\<br\>(.*)]*/
-  // /([A-Z]{1,3}\-*\d{1,2})\s+<br>([\w+\s\.]+)[<br>(.*)]*/
-  // /([A-Z]{1,3}\-*\d{1,2})\s+<br>([\w+\s\.]+)[<br>]*(.*)*/
 
-  let progress = [];
   const regex = /([A-Z]{1,3}\-*\d{1,2})\s+<br>([\w+\s\.]+)[<br>]*(.*)*/;
   const formatSubject = (subject, index) => {
     if (subject.data === '&nbsp;') {
@@ -50,13 +46,9 @@ const subjectProgress = (data) => {
     return subjectModel;
   };
 
-  progress = data.subjects.rows.map((row) =>
-    row.map(formatSubject).filter((subject) => subject),
-  );
-  progress = progress.reduce(
-    (previous, current) => previous.concat(current),
-    [],
-  );
+  const progress = data.subjects.rows
+    .map((row) => row.map(formatSubject).filter((subject) => subject))
+    .reduce((previous, current) => previous.concat(current), []);
 
   return {
     alumno: { ...studentData, ...academic },
