@@ -3,7 +3,6 @@ const qs = require('qs');
 const apiClient = require('../../drivers/apiClient.js');
 const mapTable = require('../../drivers/mapTable.js');
 const subjectProgress = require('../../models/subjectProgress.js');
-// const data = require('./progress.json');
 
 module.exports = (Router) => {
   const router = new Router();
