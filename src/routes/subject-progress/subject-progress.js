@@ -1,6 +1,9 @@
 const cheerio = require('cheerio');
+const qs = require('qs');
 const apiClient = require('../../drivers/apiClient.js');
 const mapTable = require('../../drivers/mapTable.js');
+const subjectProgress = require('../../models/subjectProgress.js');
+// const data = require('./progress.json');
 
 module.exports = (Router) => {
   const router = new Router();
@@ -15,12 +18,17 @@ module.exports = (Router) => {
       $,
       $('body > table:nth-child(4) > tbody'),
       'html',
+      true,
     );
 
-    // ([A-Z]{2}\d{1,2})\s+\<br\>(.*)\<br\>(.*)/
+    const data = subjectProgress({
+      student,
+      academic,
+      subjects,
+    });
 
     response.status = 200;
-    response.body = { student, academic, subjects };
+    response.body = data;
   });
 
   return router.routes();
