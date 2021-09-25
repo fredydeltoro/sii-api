@@ -24,7 +24,8 @@
     "koa-bodyparser": "^4.3.0",
     "koa-logger": "^3.2.1",
     "koa-router": "^10.1.1",
-    "pm2": "^5.1.1"
+    "pm2": "^5.1.1",
+    "qs": "^6.10.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
