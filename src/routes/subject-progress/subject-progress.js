@@ -1,5 +1,4 @@
 const cheerio = require('cheerio');
-const qs = require('qs');
 const apiClient = require('../../drivers/apiClient.js');
 const mapTable = require('../../drivers/mapTable.js');
 const subjectProgress = require('../../models/subjectProgress.js');
