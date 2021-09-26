@@ -14,7 +14,7 @@ const subjectProgress = (data) => {
 
   const academic = simpleParse({ carrea: '', especialidad: '' }, data.academic);
 
-  const regex = /([A-Z]{1,3}\-*\d{1,2})\s+<br>([\w+\s\.]+)[<br>]*(.*)*/;
+  const regex = /([A-Z]{1,3}\-*\d{1,2})\s+<br>([À-ÿ\w+\s\.]+)[<br>]*(.*)*/;
   const formatSubject = (subject, index) => {
     if (subject.data === '&nbsp;') {
       return null;

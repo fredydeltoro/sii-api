@@ -12,11 +12,7 @@ const mapTable = ($, table, type = 'text', withHeaders = false) => {
     tr.children
       .filter((el) => el.type === 'tag')
       .map((el) => ({
-        data: $(el)
-          [type]()
-          .trim()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, ''),
+        data: $(el)[type]().trim(),
         attribs: { ...el.attribs },
       })),
   );
