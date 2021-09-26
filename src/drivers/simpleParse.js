@@ -1,7 +1,7 @@
-const simpleParse = (model, data) => {
+const simpleParse = (model, records) => {
   keys = Object.keys(model);
 
-  data.rows[0].forEach((record, i) => {
+  records.forEach((record, i) => {
     model[keys[i]] = record.data;
   });
   return model;

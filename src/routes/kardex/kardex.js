@@ -1,7 +1,7 @@
 const cheerio = require('cheerio');
 const apiClient = require('../../drivers/apiClient.js');
 const mapTable = require('../../drivers/mapTable.js');
-const subjectProgress = require('../../models/subjectProgress.js');
+const kardex = require('../../models/kardex.js');
 
 module.exports = (Router) => {
   const router = new Router();
@@ -11,11 +11,14 @@ module.exports = (Router) => {
     const res = await apiClient.get(url);
     const $ = cheerio.load(res.data);
     const student = mapTable($, $('body > table:nth-child(2) > tbody'));
+    const ratings = mapTable($, $('body > table:nth-child(3) > tbody'));
+    const data = kardex({
+      student,
+      ratings,
+    });
 
     response.status = 200;
-    response.body = {
-      student,
-    };
+    response.body = data;
   });
 
   return router.routes();
