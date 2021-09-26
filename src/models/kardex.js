@@ -40,20 +40,63 @@ const kardex = (data) => {
     }))
     .filter((row) => row.length === 1);
 
-  const periods = [];
+  let periods = [];
 
   limits.forEach((from, index) => {
-    let to = { index: ratingsRows.length };
+    let to = limits[index + 1];
 
-    if (limits[index + 1]) {
-      to = limits[index + 1];
+    if (!to) {
+      to = { index: ratingsRows.length };
     }
 
     periods.push(ratingsRows.slice(from.index, to.index));
   });
 
+  const regex = /\[--(\w{3,6}-*\w{3})\/(\d{4})\]/;
+  const periodParse = (el) => {
+    if (el.length === 1) {
+      const match = el[0].data.match(regex);
+      return {
+        periodo: match[1],
+        año: match[2],
+      };
+    }
+
+    if (el.length === 4) {
+      const records = el.filter((record, index) => (index + 1) % 2 === 0);
+      return simpleParse({ prom_semestral: '', cred_aprovados: '' }, records);
+    }
+
+    if (el.length === 6 || el.length === 7) {
+      return simpleParse(
+        {
+          id: '',
+          materia: '',
+          creditos: '',
+          calificacion: '',
+          evaluacion: '',
+          observaciones: '',
+        },
+        el.filter((record, index) => index !== 0),
+      );
+    }
+
+    return el;
+  };
+
+  periods = periods.map((period) => {
+    const periodParsed = period.map(periodParse);
+    const rest = periodParsed
+      .filter((record) => !record.id)
+      .reduce((p, c) => ({ ...p, ...c }), {});
+    return {
+      ...rest,
+      calificaciones: periodParsed.filter((record) => record.id),
+    };
+  });
+
   return {
-    periods,
+    periodos: periods,
     alumno: studentData,
     ...averageData,
   };
