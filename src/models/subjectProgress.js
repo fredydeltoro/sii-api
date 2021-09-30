@@ -9,10 +9,13 @@ const subjectProgress = (data) => {
       periodo: '',
       prom_acum: '',
     },
-    data.student,
+    data.student.rows[0],
   );
 
-  const academic = simpleParse({ carrea: '', especialidad: '' }, data.academic);
+  const academic = simpleParse(
+    { carrea: '', especialidad: '' },
+    data.academic.rows[0],
+  );
 
   const regex = /([A-Z]{1,3}\-*\d{1,2})\s+<br>([À-ÿ\w+\s\.]+)[<br>]*(.*)*/;
   const formatSubject = (subject, index) => {
