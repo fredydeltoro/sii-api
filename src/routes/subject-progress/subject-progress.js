@@ -1,5 +1,7 @@
 const cheerio = require('cheerio');
 const apiClient = require('../../drivers/apiClient.js');
+const mapTable = require('../../drivers/mapTable.js');
+const subjectProgress = require('../../models/subjectProgress.js');
 
 module.exports = (Router) => {
   const router = new Router();
@@ -8,16 +10,23 @@ module.exports = (Router) => {
     const url = '/modulos/cons/alumnos/avance_reticular.php';
     const res = await apiClient.get(url);
     const $ = cheerio.load(res.data);
-    const data = [];
+    const student = mapTable($, $('body > table:nth-child(1) > tbody'));
+    const academic = mapTable($, $('body > table:nth-child(2) > tbody'));
+    const subjects = mapTable(
+      $,
+      $('body > table:nth-child(4) > tbody'),
+      'html',
+      true,
+    );
 
-    $('body > table:nth-child(1) > tbody')
-      .children()
-      .each((i, el) => {
-        data.push($(el).text());
-      });
+    const data = subjectProgress({
+      student,
+      academic,
+      subjects,
+    });
 
     response.status = 200;
-    response.body = { data };
+    response.body = data;
   });
 
   return router.routes();

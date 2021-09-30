@@ -1,15 +1,11 @@
 const Koa = require('koa');
 const cors = require('@koa/cors');
-const bodyParser = require('koa-bodyparser');
+const bodyParser = require('koa-body');
 
 const app = new Koa();
 
 app.use(cors());
 
-app.use(bodyParser({
-  enableTypes: ['json'],
-  jsonLimit: '4mb',
-  strict: true,
-}));
+app.use(bodyParser({ json: true, urlencoded: false }));
 
 module.exports = app;
