@@ -9,24 +9,29 @@ module.exports = (Router) => {
   router.get('/', async ({ response }) => {
     const url = '/modulos/cons/alumnos/avance_reticular.php';
     const res = await apiClient.get(url);
-    const $ = cheerio.load(res.data);
-    const student = mapTable($, $('body > table:nth-child(1) > tbody'));
-    const academic = mapTable($, $('body > table:nth-child(2) > tbody'));
-    const subjects = mapTable(
-      $,
-      $('body > table:nth-child(4) > tbody'),
-      'html',
-      true,
-    );
 
-    const data = subjectProgress({
-      student,
-      academic,
-      subjects,
-    });
+    if (res.error) {
+      response.status = 401;
+    } else {
+      const $ = cheerio.load(res.data);
+      const student = mapTable($, $('body > table:nth-child(1) > tbody'));
+      const academic = mapTable($, $('body > table:nth-child(2) > tbody'));
+      const subjects = mapTable(
+        $,
+        $('body > table:nth-child(4) > tbody'),
+        'html',
+        true,
+      );
 
-    response.status = 200;
-    response.body = data;
+      const data = subjectProgress({
+        student,
+        academic,
+        subjects,
+      });
+
+      response.status = 200;
+      response.body = data;
+    }
   });
 
   return router.routes();
