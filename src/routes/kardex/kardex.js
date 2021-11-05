@@ -9,16 +9,21 @@ module.exports = (Router) => {
   router.get('/', async ({ response }) => {
     const url = '/modulos/cons/alumnos/kardex.php';
     const res = await apiClient.get(url);
-    const $ = cheerio.load(res.data);
-    const student = mapTable($, $('body > table:nth-child(2) > tbody'));
-    const ratings = mapTable($, $('body > table:nth-child(3) > tbody'));
-    const data = kardex({
-      student,
-      ratings,
-    });
 
-    response.status = 200;
-    response.body = data;
+    if (res.error) {
+      response.status = 401;
+    } else {
+      const $ = cheerio.load(res.data);
+      const student = mapTable($, $('body > table:nth-child(2) > tbody'));
+      const ratings = mapTable($, $('body > table:nth-child(3) > tbody'));
+      const data = kardex({
+        student,
+        ratings,
+      });
+
+      response.status = 200;
+      response.body = data;
+    }
   });
 
   return router.routes();
