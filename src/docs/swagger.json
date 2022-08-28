@@ -82,36 +82,36 @@
             },
             "examples": {
               "application/json; charset=utf-8": {
-                "periodos": [
+                "periods": [
                   {
-                    "periodo": "AGO-DIC",
-                    "año": "2015",
-                    "prom_semestral": "100",
-                    "cred_aprovados": "4 / 4",
-                    "calificaciones": [
+                    "period": "AGO-DIC",
+                    "year": "2015",
+                    "semester_avg": "100",
+                    "approved_credits": "4 / 4",
+                    "ratings": [
                       {
                         "id": "AR9",
-                        "materia": "INTELIGENCIA ARTIFICIAL",
-                        "creditos": "4",
-                        "calificacion": "100",
-                        "evaluacion": "Ev.Ord.1ra",
-                        "observaciones": ""
+                        "subject": "INTELIGENCIA ARTIFICIAL",
+                        "credits": "4",
+                        "rating": "100",
+                        "evaluation": "Ev.Ord.1ra",
+                        "notes": ""
                       }
                     ]
                   }
                 ],
-                "alumno": {
+                "student": {
                   "no_control": "12345678",
-                  "nombre": "JUAN PEREZ",
+                  "name": "JUAN PEREZ",
                   "plan": "ISIC-2010-224",
-                  "semestre": "13",
-                  "carrera": "ING. SIST. COMP.",
-                  "especialidad": "INTEGRACION DE TECNOLOGIAS"
+                  "semester": "13",
+                  "career": "ING. SIST. COMP.",
+                  "field": "INTEGRACION DE TECNOLOGIAS"
                 },
-                "prom_aritmetico": "100",
-                "cred_cursados": "4",
-                "prom_certificado": "100",
-                "cred_aprovados": "4"
+                "arimetic_avg": "100",
+                "taked_credits": "4",
+                "certificated_avg": "100",
+                "aprroved_credits": "4"
               }
             },
             "headers": {
