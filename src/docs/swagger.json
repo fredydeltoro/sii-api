@@ -253,8 +253,8 @@
     "LoginRequest": {
       "title": "LoginRequest",
       "example": {
-        "usuario": "12590161",
-        "contrasena": "8623"
+        "usuario": "123456",
+        "contrasena": "123"
       },
       "type": "object",
       "properties": {
@@ -270,298 +270,276 @@
     "Kardex": {
       "title": "Kardex",
       "example": {
-        "periodos": [
+        "periods": [
           {
-            "periodo": "AGO-DIC",
-            "año": "2015",
-            "prom_semestral": "100",
-            "cred_aprovados": "4 / 4",
-            "calificaciones": [
+            "period": "AGO-DIC",
+            "year": "2015",
+            "semester_avg": "100",
+            "approved_credits": "4 / 4",
+            "ratigns": [
               {
                 "id": "AR9",
-                "materia": "INTELIGENCIA ARTIFICIAL",
-                "creditos": "4",
-                "calificacion": "100",
-                "evaluacion": "Ev.Ord.1ra",
-                "observaciones": ""
+                "subject": "INTELIGENCIA ARTIFICIAL",
+                "credits": "4",
+                "rating": "100",
+                "evaluation": "Ev.Ord.1ra",
+                "notes": ""
               }
             ]
           }
         ],
-        "alumno": {
+        "student": {
           "no_control": "12345678",
-          "nombre": "JUAN PEREZ",
+          "name": "JUAN PEREZ",
           "plan": "ISIC-2010-224",
-          "semestre": "13",
-          "carrera": "ING. SIST. COMP.",
-          "especialidad": "INTEGRACION DE TECNOLOGIAS"
+          "semester": "13",
+          "career": "ING. SIST. COMP.",
+          "field": "INTEGRACION DE TECNOLOGIAS"
         },
-        "prom_aritmetico": "100",
-        "cred_cursados": "4",
-        "prom_certificado": "100",
-        "cred_aprovados": "4"
+        "arimetic_avg": "100",
+        "taked_credits": "4",
+        "certificated_avg": "100",
+        "aprroved_credits": "4"
       },
       "type": "object",
       "properties": {
-        "periodos": {
+        "periods": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Periodo"
+            "$ref": "#/definitions/Period"
           }
         },
-        "alumno": {
-          "$ref": "#/definitions/Alumno"
+        "student": {
+          "$ref": "#/definitions/Student"
         },
-        "prom_aritmetico": {
+        "arimetic_avg": {
           "type": "string"
         },
-        "cred_cursados": {
+        "taked_credits": {
           "type": "string"
         },
-        "prom_certificado": {
+        "certificated_avg": {
           "type": "string"
         },
-        "cred_aprovados": {
+        "aprroved_credits": {
           "type": "string"
         }
       },
       "required": [
-        "periodos",
-        "alumno",
-        "prom_aritmetico",
-        "cred_cursados",
-        "prom_certificado",
-        "cred_aprovados"
+        "periods",
+        "student",
+        "arimetic_avg",
+        "taked_credits",
+        "certificated_avg",
+        "aprroved_credits"
       ]
     },
-    "Periodo": {
-      "title": "Periodo",
+    "Period": {
+      "title": "Period",
       "example": {
-        "periodo": "AGO-DIC",
-        "año": "2015",
-        "prom_semestral": "100",
-        "cred_aprovados": "4 / 4",
-        "calificaciones": [
+        "period": "AGO-DIC",
+        "year": "2015",
+        "semester_avg": "100",
+        "approved_credits": "4 / 4",
+        "ratings": [
           {
             "id": "AR9",
-            "materia": "INTELIGENCIA ARTIFICIAL",
-            "creditos": "4",
-            "calificacion": "100",
-            "evaluacion": "Ev.Ord.1ra",
-            "observaciones": ""
+            "subject": "INTELIGENCIA ARTIFICIAL",
+            "credits": "4",
+            "rating": "100",
+            "evaluation": "Ev.Ord.1ra",
+            "notes": ""
           }
         ]
       },
       "type": "object",
       "properties": {
-        "periodo": {
+        "period": {
           "type": "string"
         },
-        "año": {
+        "year": {
           "type": "string"
         },
-        "prom_semestral": {
+        "semester_avg": {
           "type": "string"
         },
-        "cred_aprovados": {
+        "approved_credits": {
           "type": "string"
         },
-        "calificaciones": {
+        "ratings": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Calificacione"
+            "$ref": "#/definitions/Ratings"
           }
         }
       },
       "required": [
-        "periodo",
-        "año",
-        "prom_semestral",
-        "cred_aprovados",
-        "calificaciones"
+        "period",
+        "year",
+        "semester_avg",
+        "approved_credits",
+        "ratings"
       ]
     },
-    "Calificacione": {
-      "title": "Calificacione",
+    "Ratings": {
+      "title": "Ratings",
       "example": {
         "id": "AR9",
-        "materia": "INTELIGENCIA ARTIFICIAL",
-        "creditos": "4",
-        "calificacion": "100",
-        "evaluacion": "Ev.Ord.1ra",
-        "observaciones": ""
+        "subject": "INTELIGENCIA ARTIFICIAL",
+        "credits": "4",
+        "rating": "100",
+        "evaluation": "Ev.Ord.1ra",
+        "notes": ""
       },
       "type": "object",
       "properties": {
         "id": {
           "type": "string"
         },
-        "materia": {
+        "subject": {
           "type": "string"
         },
-        "creditos": {
+        "credits": {
           "type": "string"
         },
-        "calificacion": {
+        "rating": {
           "type": "string"
         },
-        "evaluacion": {
+        "evaluation": {
           "type": "string"
         },
-        "observaciones": {
+        "notes": {
           "type": "string"
         }
       },
-      "required": [
-        "id",
-        "materia",
-        "creditos",
-        "calificacion",
-        "evaluacion",
-        "observaciones"
-      ]
+      "required": ["id", "subject", "credits", "rating", "evaluation", "notes"]
     },
-    "Alumno": {
-      "title": "Alumno",
+    "Student": {
+      "title": "Student",
       "example": {
         "no_control": "12345678",
-        "nombre": "JUAN PEREZ",
+        "name": "JUAN PEREZ",
         "plan": "ISIC-2010-224",
-        "semestre": "13",
-        "carrera": "ING. SIST. COMP.",
-        "especialidad": "INTEGRACION DE TECNOLOGIAS"
+        "semester": "13",
+        "career": "ING. SIST. COMP.",
+        "field": "INTEGRACION DE TECNOLOGIAS"
       },
       "type": "object",
       "properties": {
         "no_control": {
           "type": "string"
         },
-        "nombre": {
+        "name": {
           "type": "string"
         },
         "plan": {
           "type": "string"
         },
-        "semestre": {
+        "semester": {
           "type": "string"
         },
-        "carrera": {
+        "career": {
           "type": "string"
         },
-        "especialidad": {
+        "field": {
           "type": "string"
         }
       },
-      "required": [
-        "no_control",
-        "nombre",
-        "plan",
-        "semestre",
-        "carrera",
-        "especialidad"
-      ]
+      "required": ["no_control", "name", "plan", "semester", "career", "field"]
     },
     "SubjectProgress": {
       "title": "SubjectProgress",
       "type": "object",
       "properties": {
-        "alumno": {
-          "$ref": "#/definitions/Alumno1"
+        "student": {
+          "$ref": "#/definitions/Student1"
         },
-        "progreso": {
+        "progress": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Progreso"
+            "$ref": "#/definitions/Progress"
           }
         }
       },
-      "required": ["alumno", "progreso"]
+      "required": ["student", "progress"]
     },
-    "Alumno1": {
-      "title": "Alumno1",
+    "Student1": {
+      "title": "Student1",
       "example": {
         "no_control": "12345678",
-        "nombre": "PEREZ JUAN",
-        "semestre": "1",
-        "periodo": "AGO-DIC/2021",
-        "prom_acum": "100",
-        "carrea": "INGENIERÍA EN SISTEMAS COMPUTACIONALES",
-        "especialidad": "INTEGRACION DE TECNOLOGIAS"
+        "name": "PEREZ JUAN",
+        "semester": "1",
+        "period": "AGO-DIC/2021",
+        "accumulated_avg": "100",
+        "career": "INGENIERÍA EN SISTEMAS COMPUTACIONALES",
+        "field": "INTEGRACION DE TECNOLOGIAS"
       },
       "type": "object",
       "properties": {
         "no_control": {
           "type": "string"
         },
-        "nombre": {
+        "name": {
           "type": "string"
         },
-        "semestre": {
+        "semester": {
           "type": "string"
         },
-        "periodo": {
+        "period": {
           "type": "string"
         },
-        "prom_acum": {
+        "accumulated_avg": {
           "type": "string"
         },
-        "carrea": {
+        "career": {
           "type": "string"
         },
-        "especialidad": {
+        "field": {
           "type": "string"
         }
       },
       "required": [
         "no_control",
-        "nombre",
-        "semestre",
-        "periodo",
-        "prom_acum",
-        "carrea",
-        "especialidad"
+        "name",
+        "semester",
+        "period",
+        "accumulated_avg",
+        "career",
+        "field"
       ]
     },
-    "Progreso": {
-      "title": "Progreso",
+    "Progress": {
+      "title": "Progress",
       "example": {
         "id": "AR1",
-        "materia": "CÁLCULO DIFERENCIAL",
-        "calificacion": 100,
-        "evaluacion": "01",
-        "estatus": "verde",
-        "semestre": 1
+        "subject": "CÁLCULO DIFERENCIAL",
+        "rating": 100,
+        "evaluation": "01",
+        "status": "verde",
+        "semester": 1
       },
       "type": "object",
       "properties": {
         "id": {
           "type": "string"
         },
-        "materia": {
+        "subject": {
           "type": "string"
         },
-        "calificacion": {
+        "rating": {
           "type": "object"
         },
-        "evaluacion": {
+        "evaluation": {
           "type": "string"
         },
-        "estatus": {
+        "status": {
           "type": "string"
         },
-        "semestre": {
+        "semester": {
           "type": "integer",
           "format": "int32"
         }
-      },
-      "required": [
-        "id",
-        "materia",
-        "calificacion",
-        "evaluacion",
-        "estatus",
-        "semestre"
-      ]
+      }
     }
   },
   "tags": [
