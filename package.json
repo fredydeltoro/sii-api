@@ -4,7 +4,8 @@
   "description": "Scrapper para generar una api del sii",
   "main": "src/main.js",
   "scripts": {
-    "start": "pm2-runtime src/main.js --watch --raw",
+    "dev": "pm2-runtime src/main.js --watch --raw",
+    "start": "node src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "husky install",
     "pre-commit": "lint-staged"
