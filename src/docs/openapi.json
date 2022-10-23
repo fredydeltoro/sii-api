@@ -8,6 +8,7 @@
   },
   "servers": [{ "url": "/" }],
   "tags": [{ "name": "V1", "description": "" }],
+  "security": [{ "bearerAuth": [] }],
   "paths": {
     "/health": {
       "get": {
@@ -683,6 +684,15 @@
           }
         },
         "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   }

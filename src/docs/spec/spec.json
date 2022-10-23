@@ -17,6 +17,7 @@
       "description": ""
     }
   ],
+  "security": [{ "bearerAuth": [] }],
   "paths": {
     "/health": {
       "get": {
@@ -44,6 +45,15 @@
     },
     "/api/v1/schedule": {
       "$ref": "./paths/schedule.json"
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
     }
   }
 }

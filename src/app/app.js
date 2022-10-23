@@ -8,6 +8,10 @@ const app = new Koa();
 
 app.use(cors());
 app.use(bodyParser({ json: true, urlencoded: false }));
+app.use(async (ctx, next) => {
+  ctx.token = ctx.request.headers.authorization?.replace('Bearer ', '');
+  await next();
+});
 logger(app);
 reqmdw(app);
 
