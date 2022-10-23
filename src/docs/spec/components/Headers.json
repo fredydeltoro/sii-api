@@ -1,0 +1,32 @@
+{
+  "Keep-Alive": {
+    "schema": {
+      "type": "string",
+      "default": "timeout=5"
+    }
+  },
+  "Connection": {
+    "schema": {
+      "type": "string",
+      "default": "keep-alive"
+    }
+  },
+  "Vary": {
+    "schema": {
+      "type": "string",
+      "default": "Origin"
+    }
+  },
+  "Content-Length": {
+    "schema": {
+      "type": "string",
+      "default": "8618"
+    }
+  },
+  "Date": {
+    "schema": {
+      "type": "string",
+      "default": "Sat, 06 Nov 2021 00:40:08 GMT"
+    }
+  }
+}

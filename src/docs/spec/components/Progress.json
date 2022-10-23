@@ -1,0 +1,32 @@
+{
+  "title": "Progreso",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "example": "AR1"
+    },
+    "subject": {
+      "type": "string",
+      "example": "CÁLCULO DIFERENCIAL"
+    },
+    "rating": {
+      "type": "string",
+      "example": 100
+    },
+    "evaluation": {
+      "type": "string",
+      "example": "01"
+    },
+    "status": {
+      "type": "string",
+      "example": "AR1"
+    },
+    "semester": {
+      "type": "integer",
+      "format": "int32",
+      "example": 1
+    }
+  },
+  "required": ["id", "subject", "rating", "evaluation", "status", "semester"]
+}

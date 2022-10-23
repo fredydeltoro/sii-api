@@ -1,0 +1,17 @@
+{
+  "title": "LoginRequest",
+  "required": ["contrasena", "usuario"],
+  "type": "object",
+  "properties": {
+    "usuario": {
+      "type": "string"
+    },
+    "contrasena": {
+      "type": "string"
+    }
+  },
+  "example": {
+    "usuario": "12590161",
+    "contrasena": "8623"
+  }
+}

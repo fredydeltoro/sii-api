@@ -1,0 +1,43 @@
+{
+  "title": "Alumno",
+  "required": [
+    "carrea",
+    "especialidad",
+    "no_control",
+    "nombre",
+    "periodo",
+    "prom_acum",
+    "semestre"
+  ],
+  "type": "object",
+  "properties": {
+    "no_control": {
+      "type": "string",
+      "example": "12345678"
+    },
+    "name": {
+      "type": "string",
+      "example": "PEREZ JUAN"
+    },
+    "semester": {
+      "type": "string",
+      "example": "1"
+    },
+    "period": {
+      "type": "string",
+      "example": "AGO-DIC/2021"
+    },
+    "accumulated_avg": {
+      "type": "string",
+      "example": "100"
+    },
+    "career": {
+      "type": "string",
+      "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
+    },
+    "field": {
+      "type": "string",
+      "example": "INTEGRACION DE TECNOLOGIAS"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Kardex",
+  "required": [
+    "student",
+    "approved_credits",
+    "taked_credits",
+    "periods",
+    "arimetic_avg",
+    "certificated_avg"
+  ],
+  "type": "object",
+  "properties": {
+    "periods": {
+      "type": "array",
+      "items": {
+        "$ref": "./Period.json"
+      }
+    },
+    "student": {
+      "$ref": "./Student.json"
+    },
+    "arimetic_avg": {
+      "type": "string",
+      "example": "8"
+    },
+    "taked_credits": {
+      "type": "string",
+      "example": "277"
+    },
+    "certificated_avg": {
+      "type": "string",
+      "example": "85.96"
+    },
+    "approved_credits": {
+      "type": "string",
+      "example": "260"
+    }
+  }
+}

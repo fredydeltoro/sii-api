@@ -1,0 +1,29 @@
+{
+  "title": "Periodo",
+  "required": ["year", "ratings", "approved_credits", "period", "semester_avg"],
+  "type": "object",
+  "properties": {
+    "period": {
+      "type": "string",
+      "example": "AGO-DIC"
+    },
+    "year": {
+      "type": "string",
+      "example": "2015"
+    },
+    "semester_avg": {
+      "type": "string",
+      "example": "100"
+    },
+    "approved_credits": {
+      "type": "string",
+      "example": "4 / 4"
+    },
+    "ratings": {
+      "type": "array",
+      "items": {
+        "$ref": "./Rattings.json"
+      }
+    }
+  }
+}

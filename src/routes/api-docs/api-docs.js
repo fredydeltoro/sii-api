@@ -13,7 +13,7 @@ module.exports = (Router) => {
 
   router.get('spec', async (ctx) => {
     ctx.body = fs.createReadStream(
-      path.resolve(path.join('src', 'docs', 'swagger.json')),
+      path.resolve(path.join('src', 'docs', 'openapi.json')),
     );
   });
 

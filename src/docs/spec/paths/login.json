@@ -1,0 +1,26 @@
+{
+  "post": {
+    "tags": ["V1"],
+    "summary": "Login",
+    "description": "Inicio de sesión en el SII",
+    "operationId": "Login",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../components/LoginRequest.json"
+          }
+        }
+      },
+      "required": true
+    },
+    "responses": {
+      "200": {
+        "description": "",
+        "content": {}
+      }
+    },
+    "deprecated": false,
+    "x-codegen-request-body-name": "Body"
+  }
+}
