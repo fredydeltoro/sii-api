@@ -1,0 +1,34 @@
+{
+  "get": {
+    "tags": ["V1"],
+    "summary": "Kardex",
+    "description": "Obtener el Kardex de calificaciones",
+    "operationId": "Kardex",
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "$ref": "../components/Headers.json"
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "../components/Kardex.json"
+            }
+          },
+          "text/plain; charset=utf-8": {
+            "schema": {
+              "$ref": "../components/Kardex.json"
+            }
+          }
+        }
+      },
+      "401": {
+        "schema": {
+          "$ref": "../components/Unauthorized.json"
+        }
+      }
+    },
+    "deprecated": false
+  }
+}

@@ -1,0 +1,553 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SII API",
+    "description": "Documentación para la api del sistema de información integral del Tecnológico Nacional de México campus San Juan del Río",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [{ "url": "/" }],
+  "tags": [{ "name": "V1", "description": "" }],
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": ["V1"],
+        "summary": "Health",
+        "description": "Obtener el status del servidor para ver que todo ande bien",
+        "operationId": "Health",
+        "responses": { "200": { "description": "", "content": {} } },
+        "deprecated": false
+      }
+    },
+    "/api/v1/login": {
+      "post": {
+        "tags": ["V1"],
+        "summary": "Login",
+        "description": "Inicio de sesión en el SII",
+        "operationId": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "LoginRequest",
+                "required": ["contrasena", "usuario"],
+                "type": "object",
+                "properties": {
+                  "usuario": { "type": "string" },
+                  "contrasena": { "type": "string" }
+                },
+                "example": { "usuario": "12590161", "contrasena": "8623" }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": { "200": { "description": "", "content": {} } },
+        "deprecated": false,
+        "x-codegen-request-body-name": "Body"
+      }
+    },
+    "/api/v1/kardex": {
+      "get": {
+        "tags": ["V1"],
+        "summary": "Kardex",
+        "description": "Obtener el Kardex de calificaciones",
+        "operationId": "Kardex",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Keep-Alive": {
+                "schema": { "type": "string", "default": "timeout=5" }
+              },
+              "Connection": {
+                "schema": { "type": "string", "default": "keep-alive" }
+              },
+              "Vary": { "schema": { "type": "string", "default": "Origin" } },
+              "Content-Length": {
+                "schema": { "type": "string", "default": "8618" }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "default": "Sat, 06 Nov 2021 00:40:08 GMT"
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "title": "Kardex",
+                  "required": [
+                    "student",
+                    "approved_credits",
+                    "taked_credits",
+                    "periods",
+                    "arimetic_avg",
+                    "certificated_avg"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "periods": {
+                      "type": "array",
+                      "items": {
+                        "title": "Periodo",
+                        "required": [
+                          "year",
+                          "ratings",
+                          "approved_credits",
+                          "period",
+                          "semester_avg"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "period": { "type": "string", "example": "AGO-DIC" },
+                          "year": { "type": "string", "example": "2015" },
+                          "semester_avg": {
+                            "type": "string",
+                            "example": "100"
+                          },
+                          "approved_credits": {
+                            "type": "string",
+                            "example": "4 / 4"
+                          },
+                          "ratings": {
+                            "type": "array",
+                            "items": {
+                              "title": "Calificacione",
+                              "required": [
+                                "calificacion",
+                                "creditos",
+                                "evaluacion",
+                                "id",
+                                "materia",
+                                "observaciones"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "id": { "type": "string", "example": "AR9" },
+                                "subject": {
+                                  "type": "string",
+                                  "example": "INTELIGENCIA ARTIFICIAL"
+                                },
+                                "credits": { "type": "string", "example": "4" },
+                                "rating": {
+                                  "type": "string",
+                                  "example": "100"
+                                },
+                                "evaluation": {
+                                  "type": "string",
+                                  "example": "Ev.Ord.1ra"
+                                },
+                                "notes": { "type": "string", "example": "" }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "student": {
+                      "title": "Alumno",
+                      "required": [
+                        "carrera",
+                        "especialidad",
+                        "no_control",
+                        "nombre",
+                        "plan",
+                        "semestre"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "no_control": {
+                          "type": "string",
+                          "example": "12345678"
+                        },
+                        "name": { "type": "string", "example": "PEREZ JUAN" },
+                        "semester": { "type": "string", "example": "1" },
+                        "career": {
+                          "type": "string",
+                          "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
+                        },
+                        "field": {
+                          "type": "string",
+                          "example": "INTEGRACION DE TECNOLOGIAS"
+                        },
+                        "plan": { "type": "string", "example": "ISIC-2010-224" }
+                      }
+                    },
+                    "arimetic_avg": { "type": "string", "example": "8" },
+                    "taked_credits": { "type": "string", "example": "277" },
+                    "certificated_avg": {
+                      "type": "string",
+                      "example": "85.96"
+                    },
+                    "approved_credits": { "type": "string", "example": "260" }
+                  }
+                }
+              },
+              "text/plain; charset=utf-8": {
+                "schema": {
+                  "title": "Kardex",
+                  "required": [
+                    "student",
+                    "approved_credits",
+                    "taked_credits",
+                    "periods",
+                    "arimetic_avg",
+                    "certificated_avg"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "periods": {
+                      "type": "array",
+                      "items": {
+                        "title": "Periodo",
+                        "required": [
+                          "year",
+                          "ratings",
+                          "approved_credits",
+                          "period",
+                          "semester_avg"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "period": { "type": "string", "example": "AGO-DIC" },
+                          "year": { "type": "string", "example": "2015" },
+                          "semester_avg": {
+                            "type": "string",
+                            "example": "100"
+                          },
+                          "approved_credits": {
+                            "type": "string",
+                            "example": "4 / 4"
+                          },
+                          "ratings": {
+                            "type": "array",
+                            "items": {
+                              "title": "Calificacione",
+                              "required": [
+                                "calificacion",
+                                "creditos",
+                                "evaluacion",
+                                "id",
+                                "materia",
+                                "observaciones"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "id": { "type": "string", "example": "AR9" },
+                                "subject": {
+                                  "type": "string",
+                                  "example": "INTELIGENCIA ARTIFICIAL"
+                                },
+                                "credits": { "type": "string", "example": "4" },
+                                "rating": {
+                                  "type": "string",
+                                  "example": "100"
+                                },
+                                "evaluation": {
+                                  "type": "string",
+                                  "example": "Ev.Ord.1ra"
+                                },
+                                "notes": { "type": "string", "example": "" }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "student": {
+                      "title": "Alumno",
+                      "required": [
+                        "carrera",
+                        "especialidad",
+                        "no_control",
+                        "nombre",
+                        "plan",
+                        "semestre"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "no_control": {
+                          "type": "string",
+                          "example": "12345678"
+                        },
+                        "name": { "type": "string", "example": "PEREZ JUAN" },
+                        "semester": { "type": "string", "example": "1" },
+                        "career": {
+                          "type": "string",
+                          "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
+                        },
+                        "field": {
+                          "type": "string",
+                          "example": "INTEGRACION DE TECNOLOGIAS"
+                        },
+                        "plan": { "type": "string", "example": "ISIC-2010-224" }
+                      }
+                    },
+                    "arimetic_avg": { "type": "string", "example": "8" },
+                    "taked_credits": { "type": "string", "example": "277" },
+                    "certificated_avg": {
+                      "type": "string",
+                      "example": "85.96"
+                    },
+                    "approved_credits": { "type": "string", "example": "260" }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "schema": {
+              "description": "Unauthorized",
+              "headers": {
+                "Keep-Alive": {
+                  "schema": { "type": "string", "default": "timeout=5" }
+                },
+                "Connection": {
+                  "schema": { "type": "string", "default": "keep-alive" }
+                },
+                "Vary": { "schema": { "type": "string", "default": "Origin" } },
+                "Content-Length": {
+                  "schema": { "type": "string", "default": "8618" }
+                },
+                "Date": {
+                  "schema": {
+                    "type": "string",
+                    "default": "Sat, 06 Nov 2021 00:40:08 GMT"
+                  }
+                }
+              },
+              "content": {
+                "application/json; charset=utf-8": {
+                  "schema": { "type": "string", "default": "" }
+                },
+                "text/plain; charset=utf-8": {
+                  "schema": { "type": "string", "default": "" },
+                  "example": "Unauthorized"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/subject-progress": {
+      "get": {
+        "tags": ["V1"],
+        "summary": "Subject Progress",
+        "description": "Obtener el avance reticular del alumno",
+        "operationId": "SubjectProgress",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Keep-Alive": {
+                "schema": { "type": "string", "default": "timeout=5" }
+              },
+              "Connection": {
+                "schema": { "type": "string", "default": "keep-alive" }
+              },
+              "Vary": { "schema": { "type": "string", "default": "Origin" } },
+              "Content-Length": {
+                "schema": { "type": "string", "default": "8618" }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "default": "Sat, 06 Nov 2021 00:40:08 GMT"
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "title": "SubjectProgress",
+                  "required": ["alumno", "progreso"],
+                  "type": "object",
+                  "properties": {
+                    "student": {
+                      "title": "Alumno",
+                      "required": [
+                        "carrea",
+                        "especialidad",
+                        "no_control",
+                        "nombre",
+                        "periodo",
+                        "prom_acum",
+                        "semestre"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "no_control": {
+                          "type": "string",
+                          "example": "12345678"
+                        },
+                        "name": { "type": "string", "example": "PEREZ JUAN" },
+                        "semester": { "type": "string", "example": "1" },
+                        "period": {
+                          "type": "string",
+                          "example": "AGO-DIC/2021"
+                        },
+                        "accumulated_avg": {
+                          "type": "string",
+                          "example": "100"
+                        },
+                        "career": {
+                          "type": "string",
+                          "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
+                        },
+                        "field": {
+                          "type": "string",
+                          "example": "INTEGRACION DE TECNOLOGIAS"
+                        }
+                      }
+                    },
+                    "progress": {
+                      "type": "array",
+                      "items": {
+                        "title": "Progreso",
+                        "type": "object",
+                        "properties": {
+                          "id": { "type": "string", "example": "AR1" },
+                          "subject": {
+                            "type": "string",
+                            "example": "CÁLCULO DIFERENCIAL"
+                          },
+                          "rating": { "type": "string", "example": 100 },
+                          "evaluation": { "type": "string", "example": "01" },
+                          "status": { "type": "string", "example": "AR1" },
+                          "semester": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": 1
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "subject",
+                          "rating",
+                          "evaluation",
+                          "status",
+                          "semester"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "text/plain; charset=utf-8": {
+                "schema": {
+                  "title": "SubjectProgress",
+                  "required": ["alumno", "progreso"],
+                  "type": "object",
+                  "properties": {
+                    "student": {
+                      "title": "Alumno",
+                      "required": [
+                        "carrea",
+                        "especialidad",
+                        "no_control",
+                        "nombre",
+                        "periodo",
+                        "prom_acum",
+                        "semestre"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "no_control": {
+                          "type": "string",
+                          "example": "12345678"
+                        },
+                        "name": { "type": "string", "example": "PEREZ JUAN" },
+                        "semester": { "type": "string", "example": "1" },
+                        "period": {
+                          "type": "string",
+                          "example": "AGO-DIC/2021"
+                        },
+                        "accumulated_avg": {
+                          "type": "string",
+                          "example": "100"
+                        },
+                        "career": {
+                          "type": "string",
+                          "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
+                        },
+                        "field": {
+                          "type": "string",
+                          "example": "INTEGRACION DE TECNOLOGIAS"
+                        }
+                      }
+                    },
+                    "progress": {
+                      "type": "array",
+                      "items": {
+                        "title": "Progreso",
+                        "type": "object",
+                        "properties": {
+                          "id": { "type": "string", "example": "AR1" },
+                          "subject": {
+                            "type": "string",
+                            "example": "CÁLCULO DIFERENCIAL"
+                          },
+                          "rating": { "type": "string", "example": 100 },
+                          "evaluation": { "type": "string", "example": "01" },
+                          "status": { "type": "string", "example": "AR1" },
+                          "semester": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": 1
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "subject",
+                          "rating",
+                          "evaluation",
+                          "status",
+                          "semester"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "Keep-Alive": {
+                "schema": { "type": "string", "default": "timeout=5" }
+              },
+              "Connection": {
+                "schema": { "type": "string", "default": "keep-alive" }
+              },
+              "Vary": { "schema": { "type": "string", "default": "Origin" } },
+              "Content-Length": {
+                "schema": { "type": "string", "default": "8618" }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "default": "Sat, 06 Nov 2021 00:40:08 GMT"
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": { "type": "string", "default": "" }
+              },
+              "text/plain; charset=utf-8": {
+                "schema": { "type": "string", "default": "" },
+                "example": "Unauthorized"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  }
+}

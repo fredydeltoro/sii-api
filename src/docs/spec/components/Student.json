@@ -1,0 +1,38 @@
+{
+  "title": "Alumno",
+  "required": [
+    "carrera",
+    "especialidad",
+    "no_control",
+    "nombre",
+    "plan",
+    "semestre"
+  ],
+  "type": "object",
+  "properties": {
+    "no_control": {
+      "type": "string",
+      "example": "12345678"
+    },
+    "name": {
+      "type": "string",
+      "example": "PEREZ JUAN"
+    },
+    "semester": {
+      "type": "string",
+      "example": "1"
+    },
+    "career": {
+      "type": "string",
+      "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
+    },
+    "field": {
+      "type": "string",
+      "example": "INTEGRACION DE TECNOLOGIAS"
+    },
+    "plan": {
+      "type": "string",
+      "example": "ISIC-2010-224"
+    }
+  }
+}

@@ -52,7 +52,7 @@ const kardex = (data) => {
       arimetic_avg: '',
       taked_credits: '',
       certificated_avg: '',
-      aprroved_credits: '',
+      approved_credits: '',
     },
     averages
       .reduce((previous, current) => previous.concat(current), [])

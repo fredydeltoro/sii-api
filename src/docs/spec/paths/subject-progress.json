@@ -1,0 +1,32 @@
+{
+  "get": {
+    "tags": ["V1"],
+    "summary": "Subject Progress",
+    "description": "Obtener el avance reticular del alumno",
+    "operationId": "SubjectProgress",
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "$ref": "../components/Headers.json"
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "../components/SubjectProgress.json"
+            }
+          },
+          "text/plain; charset=utf-8": {
+            "schema": {
+              "$ref": "../components/SubjectProgress.json"
+            }
+          }
+        }
+      },
+      "401": {
+        "$ref": "../components/Unauthorized.json"
+      }
+    },
+    "deprecated": false
+  }
+}

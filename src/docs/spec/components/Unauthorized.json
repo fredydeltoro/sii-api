@@ -1,0 +1,21 @@
+{
+  "description": "Unauthorized",
+  "headers": {
+    "$ref": "./Headers.json"
+  },
+  "content": {
+    "application/json; charset=utf-8": {
+      "schema": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "text/plain; charset=utf-8": {
+      "schema": {
+        "type": "string",
+        "default": ""
+      },
+      "example": "Unauthorized"
+    }
+  }
+}

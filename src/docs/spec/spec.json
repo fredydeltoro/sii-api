@@ -1,0 +1,46 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SII API",
+    "description": "Documentación para la api del sistema de información integral del Tecnológico Nacional de México campus San Juan del Río",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "V1",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": ["V1"],
+        "summary": "Health",
+        "description": "Obtener el status del servidor para ver que todo ande bien",
+        "operationId": "Health",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/login": {
+      "$ref": "./paths/login.json"
+    },
+    "/api/v1/kardex": {
+      "$ref": "./paths/kardex.json"
+    },
+    "/api/v1/subject-progress": {
+      "$ref": "./paths/subject-progress.json"
+    }
+  }
+}
