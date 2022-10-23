@@ -1,0 +1,40 @@
+{
+  "title": "Calificacione",
+  "required": [
+    "calificacion",
+    "creditos",
+    "evaluacion",
+    "id",
+    "materia",
+    "observaciones"
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "materia": {
+      "type": "string"
+    },
+    "creditos": {
+      "type": "string"
+    },
+    "calificacion": {
+      "type": "string"
+    },
+    "evaluacion": {
+      "type": "string"
+    },
+    "observaciones": {
+      "type": "string"
+    }
+  },
+  "example": {
+    "id": "AR9",
+    "materia": "INTELIGENCIA ARTIFICIAL",
+    "creditos": "4",
+    "calificacion": "100",
+    "evaluacion": "Ev.Ord.1ra",
+    "observaciones": ""
+  }
+}

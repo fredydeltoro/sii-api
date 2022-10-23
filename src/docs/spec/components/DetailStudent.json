@@ -1,0 +1,45 @@
+{
+  "title": "Alumno",
+  "required": [
+    "carrea",
+    "especialidad",
+    "no_control",
+    "nombre",
+    "periodo",
+    "prom_acum",
+    "semestre"
+  ],
+  "type": "object",
+  "properties": {
+    "no_control": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "semestre": {
+      "type": "string"
+    },
+    "periodo": {
+      "type": "string"
+    },
+    "prom_acum": {
+      "type": "string"
+    },
+    "carrea": {
+      "type": "string"
+    },
+    "especialidad": {
+      "type": "string"
+    }
+  },
+  "example": {
+    "no_control": "12345678",
+    "nombre": "PEREZ JUAN",
+    "semestre": "1",
+    "periodo": "AGO-DIC/2021",
+    "prom_acum": "100",
+    "carrea": "INGENIERÍA EN SISTEMAS COMPUTACIONALES",
+    "especialidad": "INTEGRACION DE TECNOLOGIAS"
+  }
+}

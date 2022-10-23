@@ -1,0 +1,36 @@
+{
+  "title": "Kardex",
+  "required": [
+    "alumno",
+    "cred_aprovados",
+    "cred_cursados",
+    "periodos",
+    "prom_aritmetico",
+    "prom_certificado"
+  ],
+  "type": "object",
+  "properties": {
+    "periodos": {
+      "type": "array",
+      "items": {
+        "$ref": "./Period.json"
+      }
+    },
+    "alumno": {
+      "$ref": "./Student.json"
+    },
+    "prom_aritmetico": {
+      "type": "string",
+      "example": "8"
+    },
+    "cred_cursados": {
+      "type": "string"
+    },
+    "prom_certificado": {
+      "type": "string"
+    },
+    "cred_aprovados": {
+      "type": "string"
+    }
+  }
+}

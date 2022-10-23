@@ -1,0 +1,47 @@
+{
+  "title": "Periodo",
+  "required": [
+    "año",
+    "calificaciones",
+    "cred_aprovados",
+    "periodo",
+    "prom_semestral"
+  ],
+  "type": "object",
+  "properties": {
+    "periodo": {
+      "type": "string"
+    },
+    "año": {
+      "type": "string"
+    },
+    "prom_semestral": {
+      "type": "string"
+    },
+    "cred_aprovados": {
+      "type": "string"
+    },
+    "calificaciones": {
+      "type": "array",
+      "items": {
+        "$ref": "./Rattings.json"
+      }
+    }
+  },
+  "example": {
+    "periodo": "AGO-DIC",
+    "año": "2015",
+    "prom_semestral": "100",
+    "cred_aprovados": "4 / 4",
+    "calificaciones": [
+      {
+        "id": "AR9",
+        "materia": "INTELIGENCIA ARTIFICIAL",
+        "creditos": "4",
+        "calificacion": "100",
+        "evaluacion": "Ev.Ord.1ra",
+        "observaciones": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Alumno",
+  "required": [
+    "carrera",
+    "especialidad",
+    "no_control",
+    "nombre",
+    "plan",
+    "semestre"
+  ],
+  "type": "object",
+  "properties": {
+    "no_control": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "plan": {
+      "type": "string"
+    },
+    "semestre": {
+      "type": "string"
+    },
+    "carrera": {
+      "type": "string"
+    },
+    "especialidad": {
+      "type": "string"
+    }
+  },
+  "example": {
+    "no_control": "12345678",
+    "nombre": "JUAN PEREZ",
+    "plan": "ISIC-2010-224",
+    "semestre": "13",
+    "carrera": "ING. SIST. COMP.",
+    "especialidad": "INTEGRACION DE TECNOLOGIAS"
+  }
+}

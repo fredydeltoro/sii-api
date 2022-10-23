@@ -1,0 +1,16 @@
+{
+  "title": "SubjectProgress",
+  "required": ["alumno", "progreso"],
+  "type": "object",
+  "properties": {
+    "alumno": {
+      "$ref": "./DetailStudent.json"
+    },
+    "progreso": {
+      "type": "array",
+      "items": {
+        "$ref": "./Progress.json"
+      }
+    }
+  }
+}
