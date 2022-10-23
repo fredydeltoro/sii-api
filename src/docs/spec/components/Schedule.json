@@ -1,0 +1,52 @@
+{
+  "title": "Schedule",
+  "required": ["subjectData", "schedule"],
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "subjectData": {
+        "title": "Schedule Item",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "AP7"
+          },
+          "teacher": {
+            "type": "string",
+            "example": "ROJO LOPEZ ARIOPAJITA"
+          },
+          "group": {
+            "type": "string",
+            "example": "A"
+          },
+          "credits": {
+            "type": "string",
+            "example": "5"
+          }
+        }
+      },
+      "schedule": {
+        "type": "array",
+        "items": {
+          "type": ["null", "object"],
+          "properties": {
+            "start": {
+              "type": "string",
+              "example": "09:00"
+            },
+            "end": {
+              "type": "string",
+              "example": "11:00"
+            },
+            "build": {
+              "type": "string",
+              "example": "M5"
+            }
+          }
+        }
+      }
+    }
+  }
+}
