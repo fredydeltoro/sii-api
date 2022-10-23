@@ -1,36 +1,39 @@
 {
   "title": "Kardex",
   "required": [
-    "alumno",
-    "cred_aprovados",
-    "cred_cursados",
-    "periodos",
-    "prom_aritmetico",
-    "prom_certificado"
+    "student",
+    "approved_credits",
+    "taked_credits",
+    "periods",
+    "arimetic_avg",
+    "certificated_avg"
   ],
   "type": "object",
   "properties": {
-    "periodos": {
+    "periods": {
       "type": "array",
       "items": {
         "$ref": "./Period.json"
       }
     },
-    "alumno": {
+    "student": {
       "$ref": "./Student.json"
     },
-    "prom_aritmetico": {
+    "arimetic_avg": {
       "type": "string",
       "example": "8"
     },
-    "cred_cursados": {
-      "type": "string"
+    "taked_credits": {
+      "type": "string",
+      "example": "277"
     },
-    "prom_certificado": {
-      "type": "string"
+    "certificated_avg": {
+      "type": "string",
+      "example": "85.96"
     },
-    "cred_aprovados": {
-      "type": "string"
+    "approved_credits": {
+      "type": "string",
+      "example": "260"
     }
   }
 }

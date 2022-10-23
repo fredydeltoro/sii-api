@@ -79,33 +79,39 @@
                 "schema": {
                   "title": "Kardex",
                   "required": [
-                    "alumno",
-                    "cred_aprovados",
-                    "cred_cursados",
-                    "periodos",
-                    "prom_aritmetico",
-                    "prom_certificado"
+                    "student",
+                    "approved_credits",
+                    "taked_credits",
+                    "periods",
+                    "arimetic_avg",
+                    "certificated_avg"
                   ],
                   "type": "object",
                   "properties": {
-                    "periodos": {
+                    "periods": {
                       "type": "array",
                       "items": {
                         "title": "Periodo",
                         "required": [
-                          "año",
-                          "calificaciones",
-                          "cred_aprovados",
-                          "periodo",
-                          "prom_semestral"
+                          "year",
+                          "ratings",
+                          "approved_credits",
+                          "period",
+                          "semester_avg"
                         ],
                         "type": "object",
                         "properties": {
-                          "periodo": { "type": "string" },
-                          "año": { "type": "string" },
-                          "prom_semestral": { "type": "string" },
-                          "cred_aprovados": { "type": "string" },
-                          "calificaciones": {
+                          "period": { "type": "string", "example": "AGO-DIC" },
+                          "year": { "type": "string", "example": "2015" },
+                          "semester_avg": {
+                            "type": "string",
+                            "example": "100"
+                          },
+                          "approved_credits": {
+                            "type": "string",
+                            "example": "4 / 4"
+                          },
+                          "ratings": {
                             "type": "array",
                             "items": {
                               "title": "Calificacione",
@@ -119,43 +125,28 @@
                               ],
                               "type": "object",
                               "properties": {
-                                "id": { "type": "string" },
-                                "materia": { "type": "string" },
-                                "creditos": { "type": "string" },
-                                "calificacion": { "type": "string" },
-                                "evaluacion": { "type": "string" },
-                                "observaciones": { "type": "string" }
-                              },
-                              "example": {
-                                "id": "AR9",
-                                "materia": "INTELIGENCIA ARTIFICIAL",
-                                "creditos": "4",
-                                "calificacion": "100",
-                                "evaluacion": "Ev.Ord.1ra",
-                                "observaciones": ""
+                                "id": { "type": "string", "example": "AR9" },
+                                "subject": {
+                                  "type": "string",
+                                  "example": "INTELIGENCIA ARTIFICIAL"
+                                },
+                                "credits": { "type": "string", "example": "4" },
+                                "rating": {
+                                  "type": "string",
+                                  "example": "100"
+                                },
+                                "evaluation": {
+                                  "type": "string",
+                                  "example": "Ev.Ord.1ra"
+                                },
+                                "notes": { "type": "string", "example": "" }
                               }
                             }
                           }
-                        },
-                        "example": {
-                          "periodo": "AGO-DIC",
-                          "año": "2015",
-                          "prom_semestral": "100",
-                          "cred_aprovados": "4 / 4",
-                          "calificaciones": [
-                            {
-                              "id": "AR9",
-                              "materia": "INTELIGENCIA ARTIFICIAL",
-                              "creditos": "4",
-                              "calificacion": "100",
-                              "evaluacion": "Ev.Ord.1ra",
-                              "observaciones": ""
-                            }
-                          ]
                         }
                       }
                     },
-                    "alumno": {
+                    "student": {
                       "title": "Alumno",
                       "required": [
                         "carrera",
@@ -167,26 +158,30 @@
                       ],
                       "type": "object",
                       "properties": {
-                        "no_control": { "type": "string" },
-                        "nombre": { "type": "string" },
-                        "plan": { "type": "string" },
-                        "semestre": { "type": "string" },
-                        "carrera": { "type": "string" },
-                        "especialidad": { "type": "string" }
-                      },
-                      "example": {
-                        "no_control": "12345678",
-                        "nombre": "JUAN PEREZ",
-                        "plan": "ISIC-2010-224",
-                        "semestre": "13",
-                        "carrera": "ING. SIST. COMP.",
-                        "especialidad": "INTEGRACION DE TECNOLOGIAS"
+                        "no_control": {
+                          "type": "string",
+                          "example": "12345678"
+                        },
+                        "name": { "type": "string", "example": "PEREZ JUAN" },
+                        "semester": { "type": "string", "example": "1" },
+                        "career": {
+                          "type": "string",
+                          "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
+                        },
+                        "field": {
+                          "type": "string",
+                          "example": "INTEGRACION DE TECNOLOGIAS"
+                        },
+                        "plan": { "type": "string", "example": "ISIC-2010-224" }
                       }
                     },
-                    "prom_aritmetico": { "type": "string", "example": "8" },
-                    "cred_cursados": { "type": "string" },
-                    "prom_certificado": { "type": "string" },
-                    "cred_aprovados": { "type": "string" }
+                    "arimetic_avg": { "type": "string", "example": "8" },
+                    "taked_credits": { "type": "string", "example": "277" },
+                    "certificated_avg": {
+                      "type": "string",
+                      "example": "85.96"
+                    },
+                    "approved_credits": { "type": "string", "example": "260" }
                   }
                 }
               },
@@ -194,33 +189,39 @@
                 "schema": {
                   "title": "Kardex",
                   "required": [
-                    "alumno",
-                    "cred_aprovados",
-                    "cred_cursados",
-                    "periodos",
-                    "prom_aritmetico",
-                    "prom_certificado"
+                    "student",
+                    "approved_credits",
+                    "taked_credits",
+                    "periods",
+                    "arimetic_avg",
+                    "certificated_avg"
                   ],
                   "type": "object",
                   "properties": {
-                    "periodos": {
+                    "periods": {
                       "type": "array",
                       "items": {
                         "title": "Periodo",
                         "required": [
-                          "año",
-                          "calificaciones",
-                          "cred_aprovados",
-                          "periodo",
-                          "prom_semestral"
+                          "year",
+                          "ratings",
+                          "approved_credits",
+                          "period",
+                          "semester_avg"
                         ],
                         "type": "object",
                         "properties": {
-                          "periodo": { "type": "string" },
-                          "año": { "type": "string" },
-                          "prom_semestral": { "type": "string" },
-                          "cred_aprovados": { "type": "string" },
-                          "calificaciones": {
+                          "period": { "type": "string", "example": "AGO-DIC" },
+                          "year": { "type": "string", "example": "2015" },
+                          "semester_avg": {
+                            "type": "string",
+                            "example": "100"
+                          },
+                          "approved_credits": {
+                            "type": "string",
+                            "example": "4 / 4"
+                          },
+                          "ratings": {
                             "type": "array",
                             "items": {
                               "title": "Calificacione",
@@ -234,43 +235,28 @@
                               ],
                               "type": "object",
                               "properties": {
-                                "id": { "type": "string" },
-                                "materia": { "type": "string" },
-                                "creditos": { "type": "string" },
-                                "calificacion": { "type": "string" },
-                                "evaluacion": { "type": "string" },
-                                "observaciones": { "type": "string" }
-                              },
-                              "example": {
-                                "id": "AR9",
-                                "materia": "INTELIGENCIA ARTIFICIAL",
-                                "creditos": "4",
-                                "calificacion": "100",
-                                "evaluacion": "Ev.Ord.1ra",
-                                "observaciones": ""
+                                "id": { "type": "string", "example": "AR9" },
+                                "subject": {
+                                  "type": "string",
+                                  "example": "INTELIGENCIA ARTIFICIAL"
+                                },
+                                "credits": { "type": "string", "example": "4" },
+                                "rating": {
+                                  "type": "string",
+                                  "example": "100"
+                                },
+                                "evaluation": {
+                                  "type": "string",
+                                  "example": "Ev.Ord.1ra"
+                                },
+                                "notes": { "type": "string", "example": "" }
                               }
                             }
                           }
-                        },
-                        "example": {
-                          "periodo": "AGO-DIC",
-                          "año": "2015",
-                          "prom_semestral": "100",
-                          "cred_aprovados": "4 / 4",
-                          "calificaciones": [
-                            {
-                              "id": "AR9",
-                              "materia": "INTELIGENCIA ARTIFICIAL",
-                              "creditos": "4",
-                              "calificacion": "100",
-                              "evaluacion": "Ev.Ord.1ra",
-                              "observaciones": ""
-                            }
-                          ]
                         }
                       }
                     },
-                    "alumno": {
+                    "student": {
                       "title": "Alumno",
                       "required": [
                         "carrera",
@@ -282,26 +268,30 @@
                       ],
                       "type": "object",
                       "properties": {
-                        "no_control": { "type": "string" },
-                        "nombre": { "type": "string" },
-                        "plan": { "type": "string" },
-                        "semestre": { "type": "string" },
-                        "carrera": { "type": "string" },
-                        "especialidad": { "type": "string" }
-                      },
-                      "example": {
-                        "no_control": "12345678",
-                        "nombre": "JUAN PEREZ",
-                        "plan": "ISIC-2010-224",
-                        "semestre": "13",
-                        "carrera": "ING. SIST. COMP.",
-                        "especialidad": "INTEGRACION DE TECNOLOGIAS"
+                        "no_control": {
+                          "type": "string",
+                          "example": "12345678"
+                        },
+                        "name": { "type": "string", "example": "PEREZ JUAN" },
+                        "semester": { "type": "string", "example": "1" },
+                        "career": {
+                          "type": "string",
+                          "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
+                        },
+                        "field": {
+                          "type": "string",
+                          "example": "INTEGRACION DE TECNOLOGIAS"
+                        },
+                        "plan": { "type": "string", "example": "ISIC-2010-224" }
                       }
                     },
-                    "prom_aritmetico": { "type": "string", "example": "8" },
-                    "cred_cursados": { "type": "string" },
-                    "prom_certificado": { "type": "string" },
-                    "cred_aprovados": { "type": "string" }
+                    "arimetic_avg": { "type": "string", "example": "8" },
+                    "taked_credits": { "type": "string", "example": "277" },
+                    "certificated_avg": {
+                      "type": "string",
+                      "example": "85.96"
+                    },
+                    "approved_credits": { "type": "string", "example": "260" }
                   }
                 }
               }
@@ -377,7 +367,7 @@
                   "required": ["alumno", "progreso"],
                   "type": "object",
                   "properties": {
-                    "alumno": {
+                    "student": {
                       "title": "Alumno",
                       "required": [
                         "carrea",
@@ -390,52 +380,57 @@
                       ],
                       "type": "object",
                       "properties": {
-                        "no_control": { "type": "string" },
-                        "nombre": { "type": "string" },
-                        "semestre": { "type": "string" },
-                        "periodo": { "type": "string" },
-                        "prom_acum": { "type": "string" },
-                        "carrea": { "type": "string" },
-                        "especialidad": { "type": "string" }
-                      },
-                      "example": {
-                        "no_control": "12345678",
-                        "nombre": "PEREZ JUAN",
-                        "semestre": "1",
-                        "periodo": "AGO-DIC/2021",
-                        "prom_acum": "100",
-                        "carrea": "INGENIERÍA EN SISTEMAS COMPUTACIONALES",
-                        "especialidad": "INTEGRACION DE TECNOLOGIAS"
+                        "no_control": {
+                          "type": "string",
+                          "example": "12345678"
+                        },
+                        "name": { "type": "string", "example": "PEREZ JUAN" },
+                        "semester": { "type": "string", "example": "1" },
+                        "period": {
+                          "type": "string",
+                          "example": "AGO-DIC/2021"
+                        },
+                        "accumulated_avg": {
+                          "type": "string",
+                          "example": "100"
+                        },
+                        "career": {
+                          "type": "string",
+                          "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
+                        },
+                        "field": {
+                          "type": "string",
+                          "example": "INTEGRACION DE TECNOLOGIAS"
+                        }
                       }
                     },
-                    "progreso": {
+                    "progress": {
                       "type": "array",
                       "items": {
                         "title": "Progreso",
-                        "example": {
-                          "id": "AR1",
-                          "materia": "CÁLCULO DIFERENCIAL",
-                          "calificacion": 100,
-                          "evaluacion": "01",
-                          "estatus": "verde",
-                          "semestre": 1
-                        },
                         "type": "object",
                         "properties": {
-                          "id": { "type": "string" },
-                          "materia": { "type": "string" },
-                          "calificacion": { "type": "object" },
-                          "evaluacion": { "type": "string" },
-                          "estatus": { "type": "string" },
-                          "semestre": { "type": "integer", "format": "int32" }
+                          "id": { "type": "string", "example": "AR1" },
+                          "subject": {
+                            "type": "string",
+                            "example": "CÁLCULO DIFERENCIAL"
+                          },
+                          "rating": { "type": "string", "example": 100 },
+                          "evaluation": { "type": "string", "example": "01" },
+                          "status": { "type": "string", "example": "AR1" },
+                          "semester": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": 1
+                          }
                         },
                         "required": [
                           "id",
-                          "materia",
-                          "calificacion",
-                          "evaluacion",
-                          "estatus",
-                          "semestre"
+                          "subject",
+                          "rating",
+                          "evaluation",
+                          "status",
+                          "semester"
                         ]
                       }
                     }
@@ -448,7 +443,7 @@
                   "required": ["alumno", "progreso"],
                   "type": "object",
                   "properties": {
-                    "alumno": {
+                    "student": {
                       "title": "Alumno",
                       "required": [
                         "carrea",
@@ -461,52 +456,57 @@
                       ],
                       "type": "object",
                       "properties": {
-                        "no_control": { "type": "string" },
-                        "nombre": { "type": "string" },
-                        "semestre": { "type": "string" },
-                        "periodo": { "type": "string" },
-                        "prom_acum": { "type": "string" },
-                        "carrea": { "type": "string" },
-                        "especialidad": { "type": "string" }
-                      },
-                      "example": {
-                        "no_control": "12345678",
-                        "nombre": "PEREZ JUAN",
-                        "semestre": "1",
-                        "periodo": "AGO-DIC/2021",
-                        "prom_acum": "100",
-                        "carrea": "INGENIERÍA EN SISTEMAS COMPUTACIONALES",
-                        "especialidad": "INTEGRACION DE TECNOLOGIAS"
+                        "no_control": {
+                          "type": "string",
+                          "example": "12345678"
+                        },
+                        "name": { "type": "string", "example": "PEREZ JUAN" },
+                        "semester": { "type": "string", "example": "1" },
+                        "period": {
+                          "type": "string",
+                          "example": "AGO-DIC/2021"
+                        },
+                        "accumulated_avg": {
+                          "type": "string",
+                          "example": "100"
+                        },
+                        "career": {
+                          "type": "string",
+                          "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
+                        },
+                        "field": {
+                          "type": "string",
+                          "example": "INTEGRACION DE TECNOLOGIAS"
+                        }
                       }
                     },
-                    "progreso": {
+                    "progress": {
                       "type": "array",
                       "items": {
                         "title": "Progreso",
-                        "example": {
-                          "id": "AR1",
-                          "materia": "CÁLCULO DIFERENCIAL",
-                          "calificacion": 100,
-                          "evaluacion": "01",
-                          "estatus": "verde",
-                          "semestre": 1
-                        },
                         "type": "object",
                         "properties": {
-                          "id": { "type": "string" },
-                          "materia": { "type": "string" },
-                          "calificacion": { "type": "object" },
-                          "evaluacion": { "type": "string" },
-                          "estatus": { "type": "string" },
-                          "semestre": { "type": "integer", "format": "int32" }
+                          "id": { "type": "string", "example": "AR1" },
+                          "subject": {
+                            "type": "string",
+                            "example": "CÁLCULO DIFERENCIAL"
+                          },
+                          "rating": { "type": "string", "example": 100 },
+                          "evaluation": { "type": "string", "example": "01" },
+                          "status": { "type": "string", "example": "AR1" },
+                          "semester": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": 1
+                          }
                         },
                         "required": [
                           "id",
-                          "materia",
-                          "calificacion",
-                          "evaluacion",
-                          "estatus",
-                          "semestre"
+                          "subject",
+                          "rating",
+                          "evaluation",
+                          "status",
+                          "semester"
                         ]
                       }
                     }

@@ -1,47 +1,29 @@
 {
   "title": "Periodo",
-  "required": [
-    "año",
-    "calificaciones",
-    "cred_aprovados",
-    "periodo",
-    "prom_semestral"
-  ],
+  "required": ["year", "ratings", "approved_credits", "period", "semester_avg"],
   "type": "object",
   "properties": {
-    "periodo": {
-      "type": "string"
+    "period": {
+      "type": "string",
+      "example": "AGO-DIC"
     },
-    "año": {
-      "type": "string"
+    "year": {
+      "type": "string",
+      "example": "2015"
     },
-    "prom_semestral": {
-      "type": "string"
+    "semester_avg": {
+      "type": "string",
+      "example": "100"
     },
-    "cred_aprovados": {
-      "type": "string"
+    "approved_credits": {
+      "type": "string",
+      "example": "4 / 4"
     },
-    "calificaciones": {
+    "ratings": {
       "type": "array",
       "items": {
         "$ref": "./Rattings.json"
       }
     }
-  },
-  "example": {
-    "periodo": "AGO-DIC",
-    "año": "2015",
-    "prom_semestral": "100",
-    "cred_aprovados": "4 / 4",
-    "calificaciones": [
-      {
-        "id": "AR9",
-        "materia": "INTELIGENCIA ARTIFICIAL",
-        "creditos": "4",
-        "calificacion": "100",
-        "evaluacion": "Ev.Ord.1ra",
-        "observaciones": ""
-      }
-    ]
   }
 }

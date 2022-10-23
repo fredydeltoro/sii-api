@@ -11,30 +11,28 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": "string"
+      "type": "string",
+      "example": "AR9"
     },
-    "materia": {
-      "type": "string"
+    "subject": {
+      "type": "string",
+      "example": "INTELIGENCIA ARTIFICIAL"
     },
-    "creditos": {
-      "type": "string"
+    "credits": {
+      "type": "string",
+      "example": "4"
     },
-    "calificacion": {
-      "type": "string"
+    "rating": {
+      "type": "string",
+      "example": "100"
     },
-    "evaluacion": {
-      "type": "string"
+    "evaluation": {
+      "type": "string",
+      "example": "Ev.Ord.1ra"
     },
-    "observaciones": {
-      "type": "string"
+    "notes": {
+      "type": "string",
+      "example": ""
     }
-  },
-  "example": {
-    "id": "AR9",
-    "materia": "INTELIGENCIA ARTIFICIAL",
-    "creditos": "4",
-    "calificacion": "100",
-    "evaluacion": "Ev.Ord.1ra",
-    "observaciones": ""
   }
 }

@@ -1,41 +1,32 @@
 {
   "title": "Progreso",
-  "example": {
-    "id": "AR1",
-    "materia": "CÁLCULO DIFERENCIAL",
-    "calificacion": 100,
-    "evaluacion": "01",
-    "estatus": "verde",
-    "semestre": 1
-  },
   "type": "object",
   "properties": {
     "id": {
-      "type": "string"
+      "type": "string",
+      "example": "AR1"
     },
-    "materia": {
-      "type": "string"
+    "subject": {
+      "type": "string",
+      "example": "CÁLCULO DIFERENCIAL"
     },
-    "calificacion": {
-      "type": "object"
+    "rating": {
+      "type": "string",
+      "example": 100
     },
-    "evaluacion": {
-      "type": "string"
+    "evaluation": {
+      "type": "string",
+      "example": "01"
     },
-    "estatus": {
-      "type": "string"
+    "status": {
+      "type": "string",
+      "example": "AR1"
     },
-    "semestre": {
+    "semester": {
       "type": "integer",
-      "format": "int32"
+      "format": "int32",
+      "example": 1
     }
   },
-  "required": [
-    "id",
-    "materia",
-    "calificacion",
-    "evaluacion",
-    "estatus",
-    "semestre"
-  ]
+  "required": ["id", "subject", "rating", "evaluation", "status", "semester"]
 }

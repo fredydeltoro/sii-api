@@ -3,10 +3,10 @@
   "required": ["alumno", "progreso"],
   "type": "object",
   "properties": {
-    "alumno": {
+    "student": {
       "$ref": "./DetailStudent.json"
     },
-    "progreso": {
+    "progress": {
       "type": "array",
       "items": {
         "$ref": "./Progress.json"

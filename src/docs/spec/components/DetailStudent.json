@@ -12,34 +12,32 @@
   "type": "object",
   "properties": {
     "no_control": {
-      "type": "string"
+      "type": "string",
+      "example": "12345678"
     },
-    "nombre": {
-      "type": "string"
+    "name": {
+      "type": "string",
+      "example": "PEREZ JUAN"
     },
-    "semestre": {
-      "type": "string"
+    "semester": {
+      "type": "string",
+      "example": "1"
     },
-    "periodo": {
-      "type": "string"
+    "period": {
+      "type": "string",
+      "example": "AGO-DIC/2021"
     },
-    "prom_acum": {
-      "type": "string"
+    "accumulated_avg": {
+      "type": "string",
+      "example": "100"
     },
-    "carrea": {
-      "type": "string"
+    "career": {
+      "type": "string",
+      "example": "INGENIERÍA EN SISTEMAS COMPUTACIONALES"
     },
-    "especialidad": {
-      "type": "string"
+    "field": {
+      "type": "string",
+      "example": "INTEGRACION DE TECNOLOGIAS"
     }
-  },
-  "example": {
-    "no_control": "12345678",
-    "nombre": "PEREZ JUAN",
-    "semestre": "1",
-    "periodo": "AGO-DIC/2021",
-    "prom_acum": "100",
-    "carrea": "INGENIERÍA EN SISTEMAS COMPUTACIONALES",
-    "especialidad": "INTEGRACION DE TECNOLOGIAS"
   }
 }
