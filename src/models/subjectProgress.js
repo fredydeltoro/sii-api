@@ -4,16 +4,16 @@ const subjectProgress = (data) => {
   const studentData = simpleParse(
     {
       no_control: '',
-      nombre: '',
-      semestre: '',
-      periodo: '',
-      prom_acum: '',
+      name: '',
+      semester: '',
+      period: '',
+      accumulated_avg: '',
     },
     data.student.rows[0],
   );
 
   const academic = simpleParse(
-    { carrea: '', especialidad: '' },
+    { career: '', field: '' },
     data.academic.rows[0],
   );
 
@@ -25,25 +25,25 @@ const subjectProgress = (data) => {
 
     const subjectModel = {
       id: '',
-      materia: '',
-      calificacion: null,
-      evaluacion: null,
-      estatus: null,
-      semestre: null,
+      subject: '',
+      rating: null,
+      evaluation: null,
+      status: null,
+      semester: null,
     };
 
     const match = subject.data.match(regex);
 
     if (match) {
       subjectModel.id = match[1];
-      subjectModel.materia = match[2];
+      subjectModel.subject = match[2];
       if (match[3]) {
         const rest = match[3].split('/');
-        subjectModel.calificacion = parseInt(rest[0]);
-        subjectModel.evaluacion = rest[1];
+        subjectModel.rating = parseInt(rest[0]);
+        subjectModel.evaluation = rest[1];
       }
-      subjectModel.estatus = subject.attribs.id;
-      subjectModel.semestre = index + 1;
+      subjectModel.status = subject.attribs.id;
+      subjectModel.semester = index + 1;
     }
 
     return subjectModel;
@@ -54,8 +54,8 @@ const subjectProgress = (data) => {
     .reduce((previous, current) => previous.concat(current), []);
 
   return {
-    alumno: { ...studentData, ...academic },
-    progreso: progress,
+    student: { ...studentData, ...academic },
+    progress,
   };
 };
 
