@@ -553,7 +553,7 @@
       "get": {
         "tags": ["V1"],
         "summary": "Schedule",
-        "description": "Obtener el avance reticular del alumno",
+        "description": "Obtener el horario del alumno",
         "operationId": "Schedule",
         "responses": {
           "200": {
