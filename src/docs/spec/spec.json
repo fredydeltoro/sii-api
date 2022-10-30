@@ -17,6 +17,7 @@
       "description": ""
     }
   ],
+  "security": [{ "bearerAuth": [] }],
   "paths": {
     "/health": {
       "get": {
@@ -36,6 +37,9 @@
     "/api/v1/login": {
       "$ref": "./paths/login.json"
     },
+    "/api/v1/logout": {
+      "$ref": "./paths/logout.json"
+    },
     "/api/v1/kardex": {
       "$ref": "./paths/kardex.json"
     },
@@ -44,6 +48,15 @@
     },
     "/api/v1/schedule": {
       "$ref": "./paths/schedule.json"
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
     }
   }
 }

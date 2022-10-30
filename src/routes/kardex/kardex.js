@@ -6,9 +6,9 @@ const kardex = require('../../models/kardex.js');
 module.exports = (Router) => {
   const router = new Router();
 
-  router.get('/', async ({ response }) => {
+  router.get('/', async ({ response, token }) => {
     const url = '/modulos/cons/alumnos/kardex.php';
-    const res = await apiClient.get(url);
+    const res = await apiClient.get(url, token);
 
     if (res.error) {
       response.status = 401;

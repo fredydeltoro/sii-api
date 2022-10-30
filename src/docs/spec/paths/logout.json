@@ -1,0 +1,18 @@
+{
+  "get": {
+    "tags": ["V1"],
+    "summary": "Logout",
+    "description": "Cerrar sesión",
+    "operationId": "Logout",
+    "responses": {
+      "200": {
+        "description": "",
+        "content": {}
+      },
+      "401": {
+        "$ref": "../components/Unauthorized.json"
+      }
+    },
+    "deprecated": false
+  }
+}

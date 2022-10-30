@@ -6,9 +6,9 @@ const subjectProgress = require('../../models/subjectProgress.js');
 module.exports = (Router) => {
   const router = new Router();
 
-  router.get('/', async ({ response }) => {
+  router.get('/', async ({ response, token }) => {
     const url = '/modulos/cons/alumnos/avance_reticular.php';
-    const res = await apiClient.get(url);
+    const res = await apiClient.get(url, token);
 
     if (res.error) {
       response.status = 401;
