@@ -8,13 +8,7 @@ module.exports = (Router) => {
 
   router.get('/', async ({ response, token }) => {
     const url = '/modulos/cons/alumnos/avance_reticular.php';
-    const res = await apiClient.get(url, {
-      headers: {
-        common: {
-          Cookie: `PHPSESSID=${token}`,
-        },
-      },
-    });
+    const res = await apiClient.get(url, token);
 
     if (res.error) {
       response.status = 401;

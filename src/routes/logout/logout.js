@@ -4,13 +4,7 @@ module.exports = (Router) => {
   const router = new Router();
 
   router.get('/', async ({ response, token }) => {
-    await apiClient.get('/cerrar_sesion.php', {
-      headers: {
-        common: {
-          Cookie: `PHPSESSID=${token}`,
-        },
-      },
-    });
+    await apiClient.get('/cerrar_sesion.php', token);
 
     response.status = 200;
   });
