@@ -6,3 +6,6 @@ Una primera aproximación a una api para el sii, a través de web scraping
 
 1. yarn install
 2. yarn start
+
+## Documentation
+- yarn create-doc
