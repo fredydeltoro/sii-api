@@ -1,0 +1,30 @@
+{
+  "title": "Current Notes",
+  "required": ["notesData"],
+  "type": "array",
+  "items": {
+    "title": "Schedule Item",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "example": "AP7"
+      },
+      "name": {
+        "type": "string",
+        "example": "REDES EMERGENTES"
+      },
+      "group": {
+        "type": "string",
+        "example": "A"
+      },
+      "notes": {
+        "type": "array",
+        "items": {
+          "type": ["null", "string"],
+          "example": "100"
+        }
+      }
+    }
+  }
+}

@@ -727,6 +727,135 @@
         },
         "deprecated": false
       }
+    },
+    "/api/v1/current-notes": {
+      "get": {
+        "tags": ["V1"],
+        "summary": "Current Notes",
+        "description": "Obtener las calificaciones parciales del alumno del periodo: (nornal|verano)",
+        "operationId": "CurrentNotes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "summer",
+            "description": "true or false",
+            "required": false,
+            "schema": { "type": "boolean" },
+            "style": "form",
+            "explode": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Keep-Alive": {
+                "schema": { "type": "string", "default": "timeout=5" }
+              },
+              "Connection": {
+                "schema": { "type": "string", "default": "keep-alive" }
+              },
+              "Vary": { "schema": { "type": "string", "default": "Origin" } },
+              "Content-Length": {
+                "schema": { "type": "string", "default": "8618" }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "default": "Sat, 06 Nov 2021 00:40:08 GMT"
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "title": "Current Notes",
+                  "required": ["notesData"],
+                  "type": "array",
+                  "items": {
+                    "title": "Schedule Item",
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "string", "example": "AP7" },
+                      "name": {
+                        "type": "string",
+                        "example": "REDES EMERGENTES"
+                      },
+                      "group": { "type": "string", "example": "A" },
+                      "notes": {
+                        "type": "array",
+                        "items": {
+                          "type": ["null", "string"],
+                          "example": "100"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "text/plain; charset=utf-8": {
+                "schema": {
+                  "title": "Current Notes",
+                  "required": ["notesData"],
+                  "type": "array",
+                  "items": {
+                    "title": "Schedule Item",
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "string", "example": "AP7" },
+                      "name": {
+                        "type": "string",
+                        "example": "REDES EMERGENTES"
+                      },
+                      "group": { "type": "string", "example": "A" },
+                      "notes": {
+                        "type": "array",
+                        "items": {
+                          "type": ["null", "string"],
+                          "example": "100"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "schema": {
+              "description": "Unauthorized",
+              "headers": {
+                "Keep-Alive": {
+                  "schema": { "type": "string", "default": "timeout=5" }
+                },
+                "Connection": {
+                  "schema": { "type": "string", "default": "keep-alive" }
+                },
+                "Vary": { "schema": { "type": "string", "default": "Origin" } },
+                "Content-Length": {
+                  "schema": { "type": "string", "default": "8618" }
+                },
+                "Date": {
+                  "schema": {
+                    "type": "string",
+                    "default": "Sat, 06 Nov 2021 00:40:08 GMT"
+                  }
+                }
+              },
+              "content": {
+                "application/json; charset=utf-8": {
+                  "schema": { "type": "string", "default": "" }
+                },
+                "text/plain; charset=utf-8": {
+                  "schema": { "type": "string", "default": "" },
+                  "example": "Unauthorized"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "components": {

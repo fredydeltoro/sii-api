@@ -48,6 +48,9 @@
     },
     "/api/v1/schedule": {
       "$ref": "./paths/schedule.json"
+    },
+    "/api/v1/current-notes": {
+      "$ref": "./paths/current-notes.json"
     }
   },
   "components": {
