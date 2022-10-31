@@ -1,0 +1,47 @@
+{
+  "get": {
+    "tags": ["V1"],
+    "summary": "Current Notes",
+    "description": "Obtener las calificaciones parciales del alumno del periodo: (nornal|verano)",
+    "operationId": "CurrentNotes",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "summer",
+        "description": "true or false",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        },
+        "style": "form",
+        "explode": false
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "OK",
+        "headers": {
+          "$ref": "../components/Headers.json"
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "../components/CurrentNotes.json"
+            }
+          },
+          "text/plain; charset=utf-8": {
+            "schema": {
+              "$ref": "../components/CurrentNotes.json"
+            }
+          }
+        }
+      },
+      "401": {
+        "schema": {
+          "$ref": "../components/Unauthorized.json"
+        }
+      }
+    },
+    "deprecated": false
+  }
+}
