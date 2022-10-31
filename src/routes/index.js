@@ -6,6 +6,7 @@ const logout = require('./logout');
 const subjectProgress = require('./subject-progress');
 const kardex = require('./kardex');
 const schedule = require('./schedule');
+const currentNotes = require('./current-notes');
 
 module.exports = (app) => {
   const router = new Router();
@@ -17,6 +18,7 @@ module.exports = (app) => {
   router.use('/api/v1/subject-progress', subjectProgress(Router));
   router.use('/api/v1/kardex', kardex(Router));
   router.use('/api/v1/schedule', schedule(Router));
+  router.use('/api/v1/current-notes', currentNotes(Router));
 
   app.use(router.routes());
 };
